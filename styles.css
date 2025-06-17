@@ -1718,7 +1718,206 @@ body.dark-mode .chat-message.bot {
 body.dark-mode footer {
   background-color: var(--d-light-alt);
 }
+/* ===== Enhanced Mobile Responsiveness ===== */
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+  font-size: 100%;
+}
+
+/* Fluid typography */
+@media (max-width: 1200px) { html { font-size: 95%; } }
+@media (max-width: 992px) { html { font-size: 90%; } }
+@media (max-width: 768px) { html { font-size: 85%; } }
+@media (max-width: 576px) { html { font-size: 82%; } }
+@media (max-width: 400px) { html { font-size: 80%; } }
+
+/* Prevent horizontal scrolling */
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Improved touch targets */
+.btn, .nav-links a, .social-links a, .filter-btn, .project-link,
+.tech-icons i, .cert-card, .achievement-card, .education-card {
+  min-height: 48px;
+  min-width: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tap highlight improvement */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+}
+
+/* Form input zoom prevention */
+@media screen and (max-width: 480px) {
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* Enhanced mobile menu */
+@media (max-width: 768px) {
+  .nav-links {
+    top: 80px;
+    padding: 2rem;
+    background-color: rgba(248, 249, 250, 0.98);
+    backdrop-filter: blur(10px);
+  }
+  
+  body.dark-mode .nav-links {
+    background-color: rgba(13, 27, 42, 0.98);
+  }
+}
+
+/* Hero section optimization */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 120px;
+    min-height: auto;
+    padding-bottom: 3rem;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Project cards adjustment */
+@media (max-width: 400px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    min-width: 0;
+  }
+}
+
+/* Media element constraints */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Orientation-specific styles */
+@media screen and (orientation: portrait) {
+  /* Portrait-specific adjustments */
+  .hero {
+    padding-bottom: 2rem;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-width: 992px) {
+  /* Landscape mobile adjustments */
+  .hero {
+    min-height: auto;
+    padding: 120px 0 3rem;
+  }
+  
+  .nav-links {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+/* CSS containment for performance */
+.project-card, .skill-card, .cert-card, .timeline-content {
+  contain: content;
+}
+
+/* Button text wrapping prevention */
+.btn, .btn-small, .btn-outline {
+  white-space: nowrap;
+}
+
+/* Minimum interactive element size */
+input[type="checkbox"], input[type="radio"] {
+  min-width: 20px;
+  min-height: 20px;
+}
+
+/* Chatbot mobile optimization */
+@media (max-width: 480px) {
+  .chatbot-container {
+    width: 90vw;
+    right: 5vw;
+    bottom: 5rem;
+  }
+  
+  .chatbot-launch {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* Timeline adjustment for small devices */
+@media (max-width: 576px) {
+  .timeline {
+    padding-left: 20px;
+  }
+  
+  .timeline-item {
+    padding-left: 1.5rem;
+  }
+  
+  .timeline-item::before {
+    left: -0.65rem;
+  }
+}
+
+/* Education card stacking */
+@media (max-width: 576px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .education-card {
+    padding: 1.5rem;
+  }
+}
+
+/* Skill tags wrapping */
+.skill-tags {
+  gap: 0.4rem;
+}
+
+@media (max-width: 400px) {
+  .skill-tags span {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Modal mobile optimization */
+@media (max-width: 576px) {
+  .modal-content {
+    width: 95%;
+    padding: 1.25rem;
+  }
+  
+  #modalContent .modal-meta {
+    gap: 0.75rem;
+  }
+}
 /* ===== Responsive Styles ===== */
 @media (max-width: 992px) {
   .hero .container {
