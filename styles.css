@@ -1005,6 +1005,11 @@ body.dark-mode {
 }
 
 /* ===== Experience Section ===== */
+#experience {
+  background-color: var(--light-bg); /* optional light background */
+  padding: 4rem 0;
+}
+
 .timeline {
   position: relative;
   margin: 0 auto;
@@ -1016,12 +1021,13 @@ body.dark-mode {
   position: relative;
   margin-bottom: 3rem;
   padding-left: 2rem;
+  padding-right: 1rem;
 }
 
 .timeline-item::before {
   content: '';
   position: absolute;
-  top: 0.5rem;
+  top: 0.75rem;
   left: -1.15rem;
   width: 15px;
   height: 15px;
@@ -1031,41 +1037,56 @@ body.dark-mode {
   z-index: 1;
 }
 
-.timeline-date {
-  font-size: 0.9rem;
-  color: var(--primary);
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-}
-
+/* Box-style appearance */
 .timeline-content {
   background-color: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: var(--shadow);
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .timeline-content h3 {
   color: var(--primary);
   margin-bottom: 0.25rem;
+  font-size: 1.25rem;
 }
 
 .timeline-content h4 {
   color: var(--dark-alt);
   margin-bottom: 1rem;
   font-size: 1rem;
+  font-weight: 500;
 }
-
 
 .timeline-content ul {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
 }
 
 .timeline-content li {
   position: relative;
   padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 .timeline-content li::before {
@@ -1073,7 +1094,9 @@ body.dark-mode {
   position: absolute;
   left: 0;
   color: var(--primary);
+  font-size: 1rem;
 }
+
 
 /* ===== Education Section ===== */
 .education-grid {
