@@ -161,7 +161,6 @@ img {
   box-shadow: var(--shadow);
   z-index: 1000;
   transition: var(--transition);
-  backdrop-filter: blur(5px);
 }
 
 #navbar.scrolled {
@@ -202,9 +201,6 @@ img {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
-  min-height: 48px;
-  display: flex;
-  align-items: center;
 }
 
 .nav-links a:hover {
@@ -311,7 +307,6 @@ body.dark-mode {
   justify-content: space-between;
   width: 24px;
   height: 18px;
-  z-index: 1001;
 }
 
 .hamburger .line {
