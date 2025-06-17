@@ -161,6 +161,7 @@ img {
   box-shadow: var(--shadow);
   z-index: 1000;
   transition: var(--transition);
+  backdrop-filter: blur(5px);
 }
 
 #navbar.scrolled {
@@ -181,11 +182,13 @@ img {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  position: relative;
 }
 
 .logo {
   font-size: 1.25rem;
   font-weight: 700;
+  z-index: 1001;
 }
 
 .logo span {
@@ -201,6 +204,9 @@ img {
   font-weight: 500;
   transition: var(--transition);
   position: relative;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a:hover {
@@ -300,6 +306,7 @@ body.dark-mode {
   transition: background-color 0.5s ease;
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
   cursor: pointer;
@@ -307,6 +314,8 @@ body.dark-mode {
   justify-content: space-between;
   width: 24px;
   height: 18px;
+  z-index: 1001;
+  position: relative;
 }
 
 .hamburger .line {
@@ -326,6 +335,67 @@ body.dark-mode {
 
 .hamburger.active .line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--card-bg);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: var(--transition);
+    z-index: 1000;
+    padding: 2rem;
+  }
+  
+  .nav-links.active {
+    left: 0;
+  }
+  
+  .nav-links a {
+    font-size: 1.2rem;
+    color: var(--dark);
+  }
+  
+  #navbar.scrolled .nav-links a {
+    color: var(--dark);
+  }
+  
+  body.dark-mode .nav-links {
+    background-color: var(--d-card-bg);
+  }
+  
+  body.dark-mode .nav-links a {
+    color: var(--d-dark);
+  }
+}
+
+/* Dark Mode Navbar Adjustments */
+body.dark-mode #navbar {
+  background-color: rgba(13, 27, 42, 0.95);
+}
+
+body.dark-mode #navbar.scrolled {
+  background-color: rgba(72, 149, 239, 0.95);
+}
+
+body.dark-mode .hamburger .line {
+  background-color: var(--d-dark);
+}
+
+body.dark-mode #navbar.scrolled .hamburger .line {
+  background-color: white;
 }
 
 /* ===== Hero Section ===== */
